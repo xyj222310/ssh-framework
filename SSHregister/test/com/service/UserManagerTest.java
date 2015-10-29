@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.model.User;
-import com.service.Impl.UserManagerImpl;
+import com.service.impl.UserManagerImpl;
 
 public class UserManagerTest {
 

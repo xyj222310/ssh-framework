@@ -4,5 +4,5 @@ import com.model.User;
 
 public interface UserDao {
 	public void save(User u);
-	public boolean checkUserExistsWithId(String id);
+	public boolean checkUserExistsWithId(String id);  
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="GB18030"%>
 <%@ page import="com.model.*" %>
 <%@ page import="com.service.*" %>
-<%@ page import="com.service.Impl.*" %>
+<%@ page import="com.service.impl.*" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
