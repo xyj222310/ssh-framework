@@ -1,12 +1,12 @@
 package com.yjx.smarthome.action;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.yjx.smarthome.service.UserService;
+import com.yjx.smarthome.service.BaseService;
 
 public class TestAction extends ActionSupport {
 
-	private UserService us=null;
-	private void setUs(UserService us){
+	private BaseService us=null;
+	private void setUs(BaseService us){
 		this.us = us;
 	}
 	@Override

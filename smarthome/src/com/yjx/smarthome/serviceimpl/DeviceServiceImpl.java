@@ -14,7 +14,7 @@ import com.yjx.smarthome.service.BaseService;
  *
  * @param <T>
  */
-public  abstract class  UserServiceImpl<T> implements BaseService<T>{
+public  class  DeviceServiceImpl<T> implements BaseService<T>{
 	/**
      * 通过spring的IoC注射进来
      */

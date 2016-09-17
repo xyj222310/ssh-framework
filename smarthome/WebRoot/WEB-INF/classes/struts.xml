@@ -9,5 +9,9 @@
 			<result name="fail">/index2.jsp</result>
 			<result name="success">/index2.jsp</result>	
 		</action>
+		<action name="web" class="com.yjx.smarthome.action.WebAction" method="execute">
+			<result name="fail">/index2.jsp</result>
+			<result name="success">/index2.jsp</result>	
+		</action>
 	</package>
 </struts>

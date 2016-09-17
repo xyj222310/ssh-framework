@@ -14,17 +14,27 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd" >
   	<context:property-placeholder location="classpath:jdbc.properties"  
 	 		ignore-unresolvable="true"/>
-	<bean id="myTestAction" class="com.yjx.smarthome.action.TestAction" scope="prototype">
-		<property name="us" ref="myUserService"></property>
-		<!--property是 class里面定义的的一个对象，而property的类型是ref的值代表的bean的class指出的类的类型  -->
-		<!-- 下面的bean也是一样的道理 -->
+	
+	<!--property是 class里面定义的的一个对象，而property的类型是ref值代表的bean的class指出的类的类型  -->
+	<!-- 下面的bean也是一样的道理 -->
+	<bean id="myWebAction" 
+		class="com.yjx.smarthome.action.WebAction" scope="prototype">
+		<property name="userService" ref="myUserService"></property>
+		<property name="deviceService" ref="myDeviceService"></property>
 	</bean>
-	<bean id="myUserService" class="com.yjx.smarthome.UserServiceImpl" scope="prototype">
-		<property name="ud" ref="myUserDao"></property>
+	<bean id="myUserService" 
+		class="com.yjx.smarthome.service.UserServiceImpl" scope="prototype">
+		<property name="dao" ref="myBaseDao"></property>
 	</bean>
-	<bean id="myUserDao" class="com.yjx.smarthome.UserDaoImpl" scope="prototype">
-		<property name="sf" ref="sessionFactory"></property>
+	<bean id="myDeviceService" 
+		class="com.yjx.smarthome.service.DeviceServiceImpl" scope="prototype">
+		<property name="dao" ref="myBaseDao"></property>
 	</bean>
+	<bean id="myBaseDao" 
+		class="com.yjx.smarthome.dao.BaseDaoImpl" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<!-- 注入连接池，包含了数据库各项信息 -->
