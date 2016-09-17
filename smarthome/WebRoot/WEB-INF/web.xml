@@ -33,6 +33,17 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+  <servlet>
+    <servlet-name>UserAction</servlet-name>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <description>This is the description of my J2EE component</description>
+    <servlet-class>com.yjx.smarthome.action.UserAction</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserAction</servlet-name>
+    <url-pattern>/UserAction</url-pattern>
+  </servlet-mapping>
     <context-param>
     	<param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>

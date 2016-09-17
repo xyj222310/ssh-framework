@@ -17,25 +17,29 @@
 	
 	<!--property是 class里面定义的的一个对象，而property的类型是ref值代表的bean的class指出的类的类型  -->
 	<!-- 下面的bean也是一样的道理 -->
-	<bean id="myWebAction" 
-		class="com.yjx.smarthome.action.WebAction" scope="prototype">
+	<bean id="myUserServlet" 
+		class="com.yjx.smarthome.action.UserServlet" scope="prototype">
+		<!-- 
 		<property name="userService" ref="myUserService"></property>
-		<property name="deviceService" ref="myDeviceService"></property>
+		<property name="userDao" ref="myUserDao"></property>
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+		 -->
+		 
 	</bean>
 	<bean id="myUserService" 
 		class="com.yjx.smarthome.service.UserServiceImpl" scope="prototype">
-		<property name="dao" ref="myBaseDao"></property>
 	</bean>
 	<bean id="myDeviceService" 
 		class="com.yjx.smarthome.service.DeviceServiceImpl" scope="prototype">
-		<property name="dao" ref="myBaseDao"></property>
 	</bean>
-	<bean id="myBaseDao" 
-		class="com.yjx.smarthome.dao.BaseDaoImpl" scope="prototype">
-		<property name="sessionFactory" ref="sessionFactory"></property>
+	<bean id="myUserDao" 
+		class="com.yjx.smarthome.dao.UserDaoImpl" scope="prototype">
+	</bean>
+		<bean id="myDeviceDao" 
+		class="com.yjx.smarthome.dao.DeviceDaoImpl" scope="prototype">
 	</bean>
 	
-	<bean id="sessionFactory"
+	<bean id="mySessionFactory"
 		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<!-- 注入连接池，包含了数据库各项信息 -->
 		<property name="dataSource" ref="myDataSource"></property>
